@@ -1,4 +1,3 @@
-// memory leak in JS detected by meteor team
 
 let theThing = null;
 
@@ -14,6 +13,7 @@ const replaceThing = function () {
       console.log(someMessage);
     }
   };
+
 };
 
 setInterval(replaceThing, 1000);
