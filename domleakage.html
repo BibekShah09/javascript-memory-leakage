@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<head>This is the head for document</head>
+
+<div id="grow">This is the id for growth</div>
+
+<script>
+    var x = [];
+
+    function grow() {
+        for (var i = 0; i < 10000; i++) {
+            document.body.appendChild(document.createElement('div'));
+        }
+        x.push(new Array(1000000).join('x'));
+    }
+
+    document.getElementById('grow').addEventListener('click', grow);
+
+    var theThing = null;
+    const replaceThing = function () {
+        var originalThing = theThing;
+        var unused = function () {
+            if (originalThing)
+                console.log("hi");
+        };
+        theThing = {
+            longStr: new Array(1000000).join('*'),
+            someMethod: function () {
+                console.log(someMessage);
+            }
+        };
+    };
+
+    setInterval(replaceThing, 500);
+
+</script>
+
+</html>
