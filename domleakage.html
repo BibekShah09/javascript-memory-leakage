@@ -5,17 +5,6 @@
 <div id="grow">This is the id for growth</div>
 
 <script>
-    var x = [];
-
-    function grow() {
-        for (var i = 0; i < 10000; i++) {
-            document.body.appendChild(document.createElement('div'));
-        }
-        x.push(new Array(1000000).join('x'));
-    }
-
-    document.getElementById('grow').addEventListener('click', grow);
-
     var theThing = null;
     const replaceThing = function () {
         var originalThing = theThing;
@@ -31,8 +20,31 @@
         };
     };
 
-    setInterval(replaceThing, 500);
+    // in out of dom Reference scenarios the green line will increase over time and wont go down.
+    // 
 
+    setInterval(replaceThing, 500);
 </script>
 
 </html>
+
+<!-- var elements = {
+    button: document.getElementById('button'),
+    image: document.getElementById('image'),
+    text:document.getElementById('text')
+  };
+  function doStuff() {     
+    image.src = 'http://some.url/image';     
+    button.click();     
+    console.log(text.innerHTML);     
+    // Much more logic
+  }  
+  function removeButton() {
+    // The button is a direct child of body.
+    document.body.removeChild(document.getElementById('button'));
+    // At this point, we still have a reference to
+    #button in the   global
+    // elements dictionary.
+    // In other words, the button element is still in
+    // memory and    cannot be collected by the GC. 
+  } -->
