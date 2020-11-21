@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 
-<head>This is the head for document</head>
+<head>Meteor Leakage</head>
 
-<div id="grow">This is the id for growth</div>
+<div id="grow">Leakage caused by Javascript Closure</div>
 
 <script>
     var theThing = null;
@@ -21,7 +21,7 @@
     };
 
     // in out of dom Reference scenarios the green line will increase over time and wont go down.
-    // 
+    //
 
     setInterval(replaceThing, 500);
 </script>
@@ -33,12 +33,12 @@
     image: document.getElementById('image'),
     text:document.getElementById('text')
   };
-  function doStuff() {     
-    image.src = 'http://some.url/image';     
-    button.click();     
-    console.log(text.innerHTML);     
+  function doStuff() {
+    image.src = 'http://some.url/image';
+    button.click();
+    console.log(text.innerHTML);
     // Much more logic
-  }  
+  }
   function removeButton() {
     // The button is a direct child of body.
     document.body.removeChild(document.getElementById('button'));
@@ -46,5 +46,5 @@
     #button in the   global
     // elements dictionary.
     // In other words, the button element is still in
-    // memory and    cannot be collected by the GC. 
+    // memory and    cannot be collected by the GC.
   } -->
